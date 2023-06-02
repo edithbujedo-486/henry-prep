@@ -209,18 +209,16 @@ function esPrimo(num) {
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
 
+ if(num === 0 || num === 1 ) return false
 
-
-    if(num %1===0 && num % num ===0){
-      return true;
-   }else (num <= 1)
-      return false;
-   
-   
-   
-   
-
-
+   num = Math.abs(num)
+   for (let i = 2; i <= num/2; i++) {
+      if (num% i ===0){
+         return false;
+      }
+      
+   }
+return true;
 
 }
 
@@ -228,12 +226,23 @@ function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+
+
+if (valor){
+   return "Soy verdadero";
+}else return "Soy falso";
+
+
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+
+
+    return  String(num).length===3;
+
 }
 
 function doWhile(num) {
@@ -241,6 +250,23 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+
+
+  
+  let contador=0;
+   
+   do {
+     num = num + 5;
+     contador++;
+   } while (contador < 8);
+   
+   return num;
+
+
+
+
+
+  
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
